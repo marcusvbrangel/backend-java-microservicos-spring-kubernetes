@@ -1,0 +1,75 @@
+
+-----------------------------------------------------------
+
+  Novo serviço pgAdmin:
+
+  - Imagem: dpage/pgadmin4:latest (versão mais recente)
+  - Container: pgadmin-container
+  - Credenciais de acesso:
+    - Email: admin@admin.com
+    - Senha: admin
+  - Porta: 5050 (acesse em http://localhost:5050)
+  - Dependência: Aguarda o PostgreSQL estar pronto
+  - Network: Conectado à mesma rede ecommerce-ms-network
+
+  Para usar agora:
+
+  docker-compose up -d
+
+  Como conectar no PostgreSQL via pgAdmin:
+
+  1. Acesse http://localhost:5050
+  2. Faça login com admin@admin.com / admin
+  3. Adicione novo servidor:
+    - Hostname: postgres-container (nome do container)
+    - Username: postgres
+    - Password: postgres
+
+
+-----------------------------------------------------------
+
+ Alterações realizadas:
+
+  1. docker-compose.yml (linha 8): POSTGRES_DB: storedb
+  2. application.properties (linha 7): jdbc:postgresql://localhost:5432/storedb
+
+  Agora o banco de dados será nomeado storedb, e o Flyway criará o schema users dentro dele com a
+  tabela user.
+
+  Configuração final:
+  - Banco: storedb
+  - Schema: users (criado pelo Flyway)
+  - Tabela: users.user
+
+
+-----------------------------------------------------------
+
+…or create a new repository on the command line
+echo "# backend-java-microservicos-spring-kubernetes" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/marcusvbrangel/backend-java-microservicos-spring-kubernetes.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/marcusvbrangel/backend-java-microservicos-spring-kubernetes.git
+git branch -M main
+git push -u origin main
+
+-----------------------------------------------------------
+
+
+
+-----------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------
+
+
+
+-----------------------------------------------------------
+
+
