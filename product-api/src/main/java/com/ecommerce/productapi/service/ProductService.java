@@ -1,7 +1,9 @@
 package com.ecommerce.productapi.service;
 
 import com.ecommerce.productapi.dto.ProductDTO;
+import com.ecommerce.productapi.model.Category;
 import com.ecommerce.productapi.model.Product;
+import com.ecommerce.productapi.repository.CategoryRepository;
 import com.ecommerce.productapi.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +14,11 @@ import java.util.Optional;
 public class ProductService {
 
     private final ProductRepository productRepository;
+    private final CategoryRepository categoryRepository;
 
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository, CategoryRepository categoryRepository) {
         this.productRepository = productRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     public List<ProductDTO> getAll() {
@@ -50,10 +54,19 @@ public class ProductService {
 
     public ProductDTO save(ProductDTO productDTO) {
 
-        Product product = productRepository.save(Product.convert(productDTO));
+        Product product = Product.convert(productDTO);
 
-        return ProductDTO.convert(product);
+        if (productDTO.getCategoryDTO() != null && productDTO.getCategoryDTO().getId() != null) {
 
+            Category category = categoryRepository.findById(productDTO.getCategoryDTO().getId())
+                    .orElseThrow(() -> new IllegalArgumentException(
+                            "Category not found with id: " + productDTO.getCategoryDTO().getId()));
+            product.setCategory(category);
+        }
+
+        Product savedProduct = productRepository.save(product);
+
+        return ProductDTO.convert(savedProduct);
     }
 
     public void delete(Long productId) {
