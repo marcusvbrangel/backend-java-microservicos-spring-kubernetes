@@ -59,7 +59,9 @@ git push -u origin main
 
 -----------------------------------------------------------
 
+select * from users.flyway_schema_history
 
+select * from users."user"
 
 -----------------------------------------------------------
 
