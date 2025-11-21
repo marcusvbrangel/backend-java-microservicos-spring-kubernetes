@@ -1,6 +1,6 @@
 package com.ecommerce.shopapi.model;
 
-import com.ecommerce.shopapi.dto.ItemDTO;
+import com.ecommerce.shopclient.dto.ItemDTO;
 import jakarta.persistence.Embeddable;
 
 @Embeddable

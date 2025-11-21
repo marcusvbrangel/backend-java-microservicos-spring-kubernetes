@@ -1,6 +1,6 @@
 package com.ecommerce.shopapi.repository;
 
-import com.ecommerce.shopapi.dto.ShopReportDTO;
+import com.ecommerce.shopclient.dto.ShopReportDTO;
 import com.ecommerce.shopapi.model.Shop;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

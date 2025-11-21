@@ -1,10 +1,11 @@
 package com.ecommerce.productapi.service;
 
-import com.ecommerce.productapi.dto.ProductDTO;
+import com.ecommerce.productapi.converter.DTOConverter;
 import com.ecommerce.productapi.model.Category;
 import com.ecommerce.productapi.model.Product;
 import com.ecommerce.productapi.repository.CategoryRepository;
 import com.ecommerce.productapi.repository.ProductRepository;
+import com.ecommerce.shopclient.dto.ProductDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class ProductService {
 
         return products
                 .stream()
-                .map(ProductDTO::convert)
+                .map(DTOConverter::convert)
                 .toList();
     }
 
@@ -37,7 +38,7 @@ public class ProductService {
 
         return products
                 .stream()
-                .map(ProductDTO::convert)
+                .map(DTOConverter::convert)
                 .toList();
     }
 
@@ -46,7 +47,7 @@ public class ProductService {
         Product product = productRepository.findByProductIdentifier(productIdentifier);
 
         if (product != null) {
-            return ProductDTO.convert(product);
+            return DTOConverter.convert(product);
         }
 
         return null;
@@ -66,7 +67,7 @@ public class ProductService {
 
         Product savedProduct = productRepository.save(product);
 
-        return ProductDTO.convert(savedProduct);
+        return DTOConverter.convert(savedProduct);
     }
 
     public void delete(Long productId) {

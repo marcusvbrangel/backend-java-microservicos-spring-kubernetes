@@ -1,6 +1,6 @@
 package com.ecommerce.productapi.model;
 
-import com.ecommerce.productapi.dto.CategoryDTO;
+import com.ecommerce.shopclient.dto.CategoryDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

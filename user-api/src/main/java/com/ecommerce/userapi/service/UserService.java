@@ -1,6 +1,7 @@
 package com.ecommerce.userapi.service;
 
-import com.ecommerce.userapi.dto.UserDTO;
+import com.ecommerce.shopclient.dto.UserDTO;
+import com.ecommerce.userapi.converter.DTOConverter;
 import com.ecommerce.userapi.model.User;
 import com.ecommerce.userapi.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -21,19 +22,19 @@ public class UserService {
 
         return userRepository.findAll()
                 .stream()
-                .map(UserDTO::convert)
+                .map(DTOConverter::convert)
                 .toList();
 
     }
 
     public UserDTO findById(Long id) {
-        return UserDTO.convert(userRepository.findById(id).orElse(null));
+        return DTOConverter.convert(userRepository.findById(id).orElse(null));
     }
 
     public UserDTO save(UserDTO userDTO) {
 
         User user = userRepository.save(User.convert(userDTO));
-        return UserDTO.convert(user);
+        return DTOConverter.convert(user);
 
     }
 
@@ -43,7 +44,7 @@ public class UserService {
 
         if (user.isPresent()) {
             userRepository.deleteById(id);
-            return UserDTO.convert(user.get());
+            return DTOConverter.convert(user.get());
         }
 
         return null;
@@ -55,7 +56,7 @@ public class UserService {
         Optional<User> user = userRepository.findByCpf(cpf);
 
         if (user.isPresent()) {
-            return UserDTO.convert(user.get());
+            return DTOConverter.convert(user.get());
         }
 
         return null;
@@ -66,7 +67,7 @@ public class UserService {
 
         return userRepository.queryByNomeLike(name)
                 .stream()
-                .map(UserDTO::convert)
+                .map(DTOConverter::convert)
                 .toList();
 
     }

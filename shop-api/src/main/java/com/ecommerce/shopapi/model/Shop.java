@@ -1,6 +1,6 @@
 package com.ecommerce.shopapi.model;
 
-import com.ecommerce.shopapi.dto.ShopDTO;
+import com.ecommerce.shopclient.dto.ShopDTO;
 import jakarta.persistence.*;
 
 import java.util.Date;

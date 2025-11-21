@@ -5,22 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ShopReportDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/converter/DTOConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/converter/DTOConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/converter/DTOConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/dto/CategoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/CategoryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/ProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/docs/notes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/controller/ShopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ShopDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ShopDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ItemDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ShopDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ShopReportDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Shop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ShopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/resources/db/migration/V1__create_shop_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/resources/db/migration/V1__create_shop_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,21 +51,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "marcusvbrangel"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;marcusvbrangel&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/marcusvbrangel/backend-java-microservicos-spring-kubernetes.git",
-    "accountId": "76e7e0d5-3efc-428d-b9a4-73f5832cd914"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/marcusvbrangel/backend-java-microservicos-spring-kubernetes.git&quot;,
+    &quot;accountId&quot;: &quot;76e7e0d5-3efc-428d-b9a4-73f5832cd914&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="35lCf2eTppQ5kb8bS19h2rxWgav" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -62,7 +75,11 @@
   "keyToString": {
     "Application.ProductApiApplication.executor": "Debug",
     "Application.ShopApiApplication.executor": "Debug",
-    "Application.UserApiApplication.executor": "Debug",
+    "Application.UserApiApplication.executor": "Run",
+    "Maven.shop-api [compile].executor": "Run",
+    "Maven.shop-api [package].executor": "Run",
+    "Maven.shop-api [validate].executor": "Run",
+    "Maven.user-api [compile].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -73,6 +90,11 @@
     "last_opened_file_path": "/home/wolf/Documentos/desenvolvimento/casa-do-codigo/backend-java-microservicos-spring-kubernetes"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.ShopApiApplication">
     <configuration name="ProductApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ecommerce.productapi.ProductApiApplication" />
@@ -116,8 +138,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ShopApiApplication" />
-        <item itemvalue="Application.ProductApiApplication" />
         <item itemvalue="Application.UserApiApplication" />
+        <item itemvalue="Application.ProductApiApplication" />
       </list>
     </recent_temporary>
   </component>

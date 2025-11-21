@@ -1,7 +1,7 @@
 package com.ecommerce.shopapi.controller;
 
-import com.ecommerce.shopapi.dto.ShopDTO;
-import com.ecommerce.shopapi.dto.ShopReportDTO;
+import com.ecommerce.shopclient.dto.ShopDTO;
+import com.ecommerce.shopclient.dto.ShopReportDTO;
 import com.ecommerce.shopapi.service.ShopService;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;

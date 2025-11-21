@@ -1,6 +1,6 @@
 package com.ecommerce.userapi.controller;
 
-import com.ecommerce.userapi.dto.UserDTO;
+import com.ecommerce.shopclient.dto.UserDTO;
 import com.ecommerce.userapi.service.UserService;
 import org.springframework.web.bind.annotation.*;
 

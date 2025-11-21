@@ -1,7 +1,7 @@
 package com.ecommerce.productapi.controller;
 
-import com.ecommerce.productapi.dto.ProductDTO;
 import com.ecommerce.productapi.service.ProductService;
+import com.ecommerce.shopclient.dto.ProductDTO;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 

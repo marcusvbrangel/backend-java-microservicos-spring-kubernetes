@@ -1,10 +1,11 @@
 package com.ecommerce.shopapi.service;
 
-import com.ecommerce.shopapi.dto.ShopDTO;
-import com.ecommerce.shopapi.dto.ShopReportDTO;
+import com.ecommerce.shopapi.converter.DTOConverter;
 import com.ecommerce.shopapi.model.Shop;
 import com.ecommerce.shopapi.repository.ReportRepositoryImpl;
 import com.ecommerce.shopapi.repository.ShopRepository;
+import com.ecommerce.shopclient.dto.ShopDTO;
+import com.ecommerce.shopclient.dto.ShopReportDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -28,7 +29,7 @@ public class ShopService {
 
         return shops
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .toList();
     }
 
@@ -38,7 +39,7 @@ public class ShopService {
 
         return shops
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .toList();
     }
 
@@ -48,7 +49,7 @@ public class ShopService {
 
         return shops
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .toList();
     }
 
@@ -57,7 +58,7 @@ public class ShopService {
         Optional<Shop> shop = shopRepository.findById(productId);
 
         if (shop.isPresent()) {
-            return ShopDTO.convert(shop.get());
+            return DTOConverter.convert(shop.get());
         }
 
         return null;
@@ -75,7 +76,7 @@ public class ShopService {
         shop.setDate(new Date());
 
         shop = shopRepository.save(shop);
-        return ShopDTO.convert(shop);
+        return DTOConverter.convert(shop);
 
     }
 
@@ -85,7 +86,7 @@ public class ShopService {
 
         return shops
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .toList();
 
     }

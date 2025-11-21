@@ -1,6 +1,6 @@
 package com.ecommerce.productapi.model;
 
-import com.ecommerce.productapi.dto.ProductDTO;
+import com.ecommerce.shopclient.dto.ProductDTO;
 import jakarta.persistence.*;
 
 import java.util.Objects;

@@ -1,6 +1,6 @@
 package com.ecommerce.shopapi.repository;
 
-import com.ecommerce.shopapi.dto.ShopReportDTO;
+import com.ecommerce.shopclient.dto.ShopReportDTO;
 import com.ecommerce.shopapi.model.Shop;
 
 import java.util.Date;
