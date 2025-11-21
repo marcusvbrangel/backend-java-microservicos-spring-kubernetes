@@ -12,3 +12,4 @@ create table shops.item (
     product_identifier varchar(100) not null,
     price float not null
 );
+
