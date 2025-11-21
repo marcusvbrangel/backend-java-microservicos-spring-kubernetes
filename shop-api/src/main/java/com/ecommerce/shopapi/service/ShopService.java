@@ -1,7 +1,9 @@
 package com.ecommerce.shopapi.service;
 
 import com.ecommerce.shopapi.dto.ShopDTO;
+import com.ecommerce.shopapi.dto.ShopReportDTO;
 import com.ecommerce.shopapi.model.Shop;
+import com.ecommerce.shopapi.repository.ReportRepositoryImpl;
 import com.ecommerce.shopapi.repository.ShopRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +15,11 @@ import java.util.Optional;
 public class ShopService {
 
     private final ShopRepository shopRepository;
+    private final ReportRepositoryImpl reportRepository;
 
-    public ShopService(ShopRepository shopRepository) {
+    public ShopService(ShopRepository shopRepository, ReportRepositoryImpl reportRepository) {
         this.shopRepository = shopRepository;
+        this.reportRepository = reportRepository;
     }
 
     public List<ShopDTO> getAll() {
@@ -40,7 +44,7 @@ public class ShopService {
 
     public List<ShopDTO> getByDate(ShopDTO shopDTO) {
 
-        List<Shop> shops = shopRepository.findAllByDateGreaterThanEquals(shopDTO.getDate());
+        List<Shop> shops = shopRepository.findAllByDateGreaterThanEqual(shopDTO.getDate());
 
         return shops
                 .stream()
@@ -73,6 +77,21 @@ public class ShopService {
         shop = shopRepository.save(shop);
         return ShopDTO.convert(shop);
 
+    }
+
+    public List<ShopDTO> getShopByFilter(Date dataInicio, Date dataFim, Float valorMinimo) {
+
+        List<Shop> shops = reportRepository.getShopByFilters(dataInicio, dataFim, valorMinimo);
+
+        return shops
+                .stream()
+                .map(ShopDTO::convert)
+                .toList();
+
+    }
+
+    public ShopReportDTO getReportByDate(Date dataInicio, Date dataFim) {
+        return reportRepository.getReportByDate(dataInicio, dataFim);
     }
 
 }

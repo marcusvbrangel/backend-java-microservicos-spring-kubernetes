@@ -11,9 +11,7 @@ public class ShopDTO {
 
     @NotBlank
     private String userIdentifier;
-    @NotNull
     private float total;
-    @NotNull
     private Date date;
     @NotNull
     private List<ItemDTO> items;
@@ -22,6 +20,13 @@ public class ShopDTO {
         ShopDTO shopDTO = new ShopDTO();
         shopDTO.setUserIdentifier(shop.getUserIdentifier());
         shopDTO.setTotal(shop.getTotal());
+        shopDTO.setDate(shop.getDate());
+        shopDTO.setItems(
+                shop.getItems()
+                        .stream()
+                        .map(ItemDTO::convert)
+                        .toList()
+        );
         return shopDTO;
     }
 

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "shop")
+@Table(name = "shop", schema = "shops")
 public class Shop {
 
     @Id
@@ -19,7 +19,7 @@ public class Shop {
     private Date date;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "item", joinColumns = @JoinColumn(name = "shop_id"))
+    @CollectionTable(name = "item", schema = "shops", joinColumns = @JoinColumn(name = "shop_id"))
     private List<Item> items;
 
     public static Shop convert(ShopDTO shopDTO) {
