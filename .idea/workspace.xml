@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ShopReportDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/controller/ShopController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ShopDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ShopDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ShopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/resources/db/migration/V1__create_shop_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/resources/db/migration/V1__create_shop_table.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "marcusvbrangel"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/marcusvbrangel/backend-java-microservicos-spring-kubernetes.git",
+    "accountId": "76e7e0d5-3efc-428d-b9a4-73f5832cd914"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="35lCf2eTppQ5kb8bS19h2rxWgav" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ProductApiApplication.executor": "Debug",
+    "Application.ShopApiApplication.executor": "Debug",
+    "Application.UserApiApplication.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/wolf/Documentos/desenvolvimento/casa-do-codigo/backend-java-microservicos-spring-kubernetes"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.ShopApiApplication">
+    <configuration name="ProductApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ecommerce.productapi.ProductApiApplication" />
+      <module name="product-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ecommerce.productapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShopApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ecommerce.shopapi.ShopApiApplication" />
+      <module name="shop-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ecommerce.shopapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ecommerce.userapi.UserApiApplication" />
+      <module name="user-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ecommerce.userapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ShopApiApplication" />
+        <item itemvalue="Application.ProductApiApplication" />
+        <item itemvalue="Application.UserApiApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="" />
+      <created>1763675371016</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763675371016</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
