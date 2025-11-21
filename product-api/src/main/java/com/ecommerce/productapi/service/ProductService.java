@@ -6,6 +6,8 @@ import com.ecommerce.productapi.model.Product;
 import com.ecommerce.productapi.repository.CategoryRepository;
 import com.ecommerce.productapi.repository.ProductRepository;
 import com.ecommerce.shopclient.dto.ProductDTO;
+import com.ecommerce.shopclient.exception.CategoryNotFoundException;
+import com.ecommerce.shopclient.exception.ProductNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -50,20 +52,20 @@ public class ProductService {
             return DTOConverter.convert(product);
         }
 
-        return null;
+        throw new ProductNotFoundException();
     }
 
     public ProductDTO save(ProductDTO productDTO) {
 
+        Optional<Category> categoryProduct = categoryRepository.findById(productDTO.getCategoryDTO().getId());
+
+        if (!categoryProduct.isPresent()) {
+            throw new CategoryNotFoundException();
+        }
+
         Product product = Product.convert(productDTO);
 
-        if (productDTO.getCategoryDTO() != null && productDTO.getCategoryDTO().getId() != null) {
-
-            Category category = categoryRepository.findById(productDTO.getCategoryDTO().getId())
-                    .orElseThrow(() -> new IllegalArgumentException(
-                            "Category not found with id: " + productDTO.getCategoryDTO().getId()));
-            product.setCategory(category);
-        }
+        product.setCategory(categoryProduct.get());
 
         Product savedProduct = productRepository.save(product);
 
@@ -77,6 +79,8 @@ public class ProductService {
         if (product.isPresent()) {
             productRepository.deleteById(productId);
         }
+
+        throw new ProductNotFoundException();
 
     }
 

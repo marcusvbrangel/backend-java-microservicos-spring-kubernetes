@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "8bf34fb2-b359-4ebb-8de9-7fefaef96cf6",
+		"name": "backend-java-microservicos-spring-kubernetes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12794460",
+		"_collection_link": "https://winter-escape-695721.postman.co/workspace/backend-java-microservicos-spri~bc581d48-441a-4048-bc39-6105e95ffc95/collection/12794460-8bf34fb2-b359-4ebb-8de9-7fefaef96cf6?action=share&source=collection_link&creator=12794460"
+	},
+	"item": [
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "Criar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"nome\": \"Carlos\",\n\"cpf\": \"987\",\n\"endereco\": \"Avenida 2\",\n\"email\":\"carlos@email.com\",\n\"telefone\":\"1234-3454\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/users/search?nome=Eduardo",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Eduardo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/users/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retornar Usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/users/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retornar Usuario por CPF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/users/cpf/23456789012",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"cpf",
+								"23456789012"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product API",
+			"item": [
+				{
+					"name": "Criar Produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"productIdentifier\":\"P678\",\n\"nome\": \"controle remoto de aspirado de po\",\n\"preco\": 100.0,\n\"descricao\": \"Um carrinho de controle remoto\",\n\"categoryDTO\": {\n\"id\": 1\n}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retornar Produto por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/products/PROD-0003",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"products",
+								"PROD-0003"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shop API",
+			"item": [
+				{
+					"name": "Criar Compra",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userIdentifier\": \"23456789012\",\n    \"items\": [\n        {\n            \"productIdentifier\": \"PROD-0002\"\n        },\n        {\n            \"productIdentifier\": \"PROD-0003\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/shops",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"shops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Compras por Usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/shops/user/23456789012",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"shops",
+								"user",
+								"23456789012"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compra Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/shops/search?dataInicio=21/11/2025&dataFim=22/11/2025&valorMinimo=7000",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"shops",
+								"search"
+							],
+							"query": [
+								{
+									"key": "dataInicio",
+									"value": "21/11/2025"
+								},
+								{
+									"key": "dataFim",
+									"value": "22/11/2025"
+								},
+								{
+									"key": "valorMinimo",
+									"value": "7000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compra Report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/shops/report?dataInicio=01/01/2002&dataFim=01/01/2026",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"shops",
+								"report"
+							],
+							"query": [
+								{
+									"key": "dataInicio",
+									"value": "01/01/2002"
+								},
+								{
+									"key": "dataFim",
+									"value": "01/01/2026"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

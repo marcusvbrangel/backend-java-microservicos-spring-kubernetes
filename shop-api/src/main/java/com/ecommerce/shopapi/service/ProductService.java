@@ -1,9 +1,11 @@
 package com.ecommerce.shopapi.service;
 
 import com.ecommerce.shopclient.dto.ProductDTO;
+import com.ecommerce.shopclient.exception.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 @Service
@@ -14,13 +16,21 @@ public class ProductService {
 
     public ProductDTO getProductByIdentifier(String productIdentifier) {
 
-        RestTemplate restTemplate = new RestTemplate();
+        try {
 
-        String url = serviceProductApiUrl + "/products/" + productIdentifier;
+            RestTemplate restTemplate = new RestTemplate();
 
-        ResponseEntity<ProductDTO> responseEntity = restTemplate.getForEntity(url, ProductDTO.class);
+            String url = serviceProductApiUrl + "/products/" + productIdentifier;
 
-        return responseEntity.getBody();
+            ResponseEntity<ProductDTO> responseEntity = restTemplate.getForEntity(url, ProductDTO.class);
+
+            return responseEntity.getBody();
+
+        } catch (HttpClientErrorException.NotFound notFound) {
+
+            throw new ProductNotFoundException();
+
+        }
 
     }
 

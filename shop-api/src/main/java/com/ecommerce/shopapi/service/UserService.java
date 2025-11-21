@@ -1,9 +1,11 @@
 package com.ecommerce.shopapi.service;
 
 import com.ecommerce.shopclient.dto.UserDTO;
+import com.ecommerce.shopclient.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 @Service
@@ -14,13 +16,21 @@ public class UserService {
 
     public UserDTO getUserByCpf(String cpf) {
 
-        RestTemplate restTemplate = new RestTemplate();
+        try {
 
-        String url = serviceUseApiUrl + "/users/cpf/" + cpf;
+            RestTemplate restTemplate = new RestTemplate();
 
-        ResponseEntity<UserDTO> responseEntity = restTemplate.getForEntity(url, UserDTO.class);
+            String url = serviceUseApiUrl + "/users/cpf/" + cpf;
 
-        return responseEntity.getBody();
+            ResponseEntity<UserDTO> responseEntity = restTemplate.getForEntity(url, UserDTO.class);
+
+            return responseEntity.getBody();
+
+        } catch (HttpClientErrorException.NotFound notFound) {
+
+            throw new UserNotFoundException();
+
+        }
 
     }
 

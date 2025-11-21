@@ -1,6 +1,7 @@
 package com.ecommerce.userapi.service;
 
 import com.ecommerce.shopclient.dto.UserDTO;
+import com.ecommerce.shopclient.exception.UserNotFoundException;
 import com.ecommerce.userapi.converter.DTOConverter;
 import com.ecommerce.userapi.model.User;
 import com.ecommerce.userapi.repository.UserRepository;
@@ -59,7 +60,7 @@ public class UserService {
             return DTOConverter.convert(user.get());
         }
 
-        return null;
+        throw new UserNotFoundException();
 
     }
 
