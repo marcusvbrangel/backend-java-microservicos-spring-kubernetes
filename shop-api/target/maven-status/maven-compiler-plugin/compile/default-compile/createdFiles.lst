@@ -1,9 +1,11 @@
-com/ecommerce/shopapi/repository/ReportRepository.class
+com/ecommerce/shopapi/service/ProductService.class
 com/ecommerce/shopapi/repository/ReportRepositoryImpl.class
-com/ecommerce/shopapi/ShopApiApplication.class
 com/ecommerce/shopapi/converter/DTOConverter.class
+com/ecommerce/shopapi/service/UserService.class
+com/ecommerce/shopapi/model/Shop.class
+com/ecommerce/shopapi/repository/ShopRepository.class
+com/ecommerce/shopapi/repository/ReportRepository.class
+com/ecommerce/shopapi/ShopApiApplication.class
 com/ecommerce/shopapi/model/Item.class
 com/ecommerce/shopapi/controller/ShopController.class
 com/ecommerce/shopapi/service/ShopService.class
-com/ecommerce/shopapi/model/Shop.class
-com/ecommerce/shopapi/repository/ShopRepository.class

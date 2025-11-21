@@ -1,6 +1,6 @@
 com/ecommerce/shopclient/dto/ShopReportDTO.class
 com/ecommerce/shopclient/dto/CategoryDTO.class
 com/ecommerce/shopclient/dto/ShopDTO.class
-com/ecommerce/shopclient/dto/ItemDTO.class
 com/ecommerce/shopclient/dto/UserDTO.class
+com/ecommerce/shopclient/dto/ItemDTO.class
 com/ecommerce/shopclient/dto/ProductDTO.class

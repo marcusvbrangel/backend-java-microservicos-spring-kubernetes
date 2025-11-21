@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="feat: implemented sql migration of users on microservice user-api">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="feat: implemented sql migration of shop and item on microservice shop-api">
+      <change afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/resources/db/migration/V2__insert_values.sql" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/resources/db/migration/V2__insert_values.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/com/ecommerce/shopapi/service/ShopService.class" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/target/classes/com/ecommerce/shopapi/service/ShopService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-client/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-client/target/shop-client-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/target/shop-client-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/converter/DTOConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/converter/DTOConverter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +62,7 @@
   "keyToString": {
     "Application.ProductApiApplication.executor": "Debug",
     "Application.ShopApiApplication.executor": "Debug",
-    "Application.UserApiApplication.executor": "Run",
+    "Application.UserApiApplication.executor": "Debug",
     "Maven.shop-api [clean].executor": "Run",
     "Maven.shop-api [compile].executor": "Run",
     "Maven.shop-api [package].executor": "Run",
@@ -71,7 +84,7 @@
       <recent name="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ShopApiApplication">
+  <component name="RunManager" selected="Application.UserApiApplication">
     <configuration name="ProductApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ecommerce.productapi.ProductApiApplication" />
       <module name="product-api" />
@@ -113,8 +126,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ShopApiApplication" />
         <item itemvalue="Application.UserApiApplication" />
+        <item itemvalue="Application.ShopApiApplication" />
         <item itemvalue="Application.ProductApiApplication" />
       </list>
     </recent_temporary>
@@ -159,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763750086677</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: implemented sql migration of shop and item on microservice shop-api">
+      <option name="closed" value="true" />
+      <created>1763751628289</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763751628289</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -167,7 +188,24 @@
     <MESSAGE value="&quot;chore: add .gitignore for Java/Spring Boot project&quot;" />
     <MESSAGE value="feat: implemented sql migration of categories and products on microservice product-api" />
     <MESSAGE value="feat: implemented sql migration of users on microservice user-api" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented sql migration of users on microservice user-api" />
+    <MESSAGE value="feat: implemented sql migration of shop and item on microservice shop-api" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented sql migration of shop and item on microservice shop-api" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/controller/ShopController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ShopService.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

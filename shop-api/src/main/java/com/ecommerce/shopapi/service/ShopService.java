@@ -4,6 +4,8 @@ import com.ecommerce.shopapi.converter.DTOConverter;
 import com.ecommerce.shopapi.model.Shop;
 import com.ecommerce.shopapi.repository.ReportRepositoryImpl;
 import com.ecommerce.shopapi.repository.ShopRepository;
+import com.ecommerce.shopclient.dto.ItemDTO;
+import com.ecommerce.shopclient.dto.ProductDTO;
 import com.ecommerce.shopclient.dto.ShopDTO;
 import com.ecommerce.shopclient.dto.ShopReportDTO;
 import org.springframework.stereotype.Service;
@@ -17,10 +19,14 @@ public class ShopService {
 
     private final ShopRepository shopRepository;
     private final ReportRepositoryImpl reportRepository;
+    private final UserService userService;
+    private final ProductService productService;
 
-    public ShopService(ShopRepository shopRepository, ReportRepositoryImpl reportRepository) {
+    public ShopService(ShopRepository shopRepository, ReportRepositoryImpl reportRepository, UserService userService, ProductService productService) {
         this.shopRepository = shopRepository;
         this.reportRepository = reportRepository;
+        this.userService = userService;
+        this.productService = productService;
     }
 
     public List<ShopDTO> getAll() {
@@ -67,6 +73,14 @@ public class ShopService {
 
     public ShopDTO save(ShopDTO shopDTO) {
 
+        if (userService.getUserByCpf(shopDTO.getUserIdentifier()) == null) {
+            return null;
+        }
+
+        if (!validarProducts(shopDTO.getItems())) {
+            return null;
+        }
+
         shopDTO.setTotal(shopDTO.getItems()
                 .stream()
                 .map(item -> item.getPrice())
@@ -76,6 +90,7 @@ public class ShopService {
         shop.setDate(new Date());
 
         shop = shopRepository.save(shop);
+
         return DTOConverter.convert(shop);
 
     }
@@ -93,6 +108,26 @@ public class ShopService {
 
     public ShopReportDTO getReportByDate(Date dataInicio, Date dataFim) {
         return reportRepository.getReportByDate(dataInicio, dataFim);
+    }
+
+    private boolean validarProducts(List<ItemDTO> items) {
+
+        for (ItemDTO item : items) {
+
+            ProductDTO productDTO = productService.getProductByIdentifier(item.getProductIdentifier());
+
+            if (productDTO == null) {
+
+                return false;
+
+            }
+
+            item.setPrice(productDTO.getPreco());
+
+        }
+
+        return true;
+
     }
 
 }
