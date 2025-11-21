@@ -4,36 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/converter/DTOConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/converter/DTOConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/converter/DTOConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/dto/CategoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/CategoryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/docs/notes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/controller/ShopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ItemDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ShopDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/dto/ShopReportDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Shop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/service/UserService.java" afterDir="false" />
+    <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="feat: implemented the shop-client, to share all of the dtos across the microservice">
+      <change beforePath="$PROJECT_DIR$/shop-client/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +48,7 @@
     "Application.ProductApiApplication.executor": "Debug",
     "Application.ShopApiApplication.executor": "Debug",
     "Application.UserApiApplication.executor": "Run",
+    "Maven.shop-api [clean].executor": "Run",
     "Maven.shop-api [compile].executor": "Run",
     "Maven.shop-api [package].executor": "Run",
     "Maven.shop-api [validate].executor": "Run",
@@ -151,7 +124,20 @@
       <option name="presentableId" value="Default" />
       <updated>1763675371016</updated>
     </task>
+    <task id="LOCAL-00001" summary="feat: implemented the shop-client, to share all of the dtos across the microservice">
+      <option name="closed" value="true" />
+      <created>1763696523075</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763696523075</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: implemented the shop-client, to share all of the dtos across the microservice" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented the shop-client, to share all of the dtos across the microservice" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
