@@ -1,0 +1,36 @@
+
+  # 1. Compilar e gerar o JAR
+  ./mvnw clean package -DskipTests
+
+  # 2. Depois gerar a imagem Docker
+  ./mvnw dockerfile:build
+
+  Explicação:
+  - ./mvnw clean package limpa o diretório target/ e gera o JAR
+  - -DskipTests pula os testes (opcional, remova se quiser executá-los)
+  - Depois sim, o Docker consegue encontrar o arquivo
+  target/user-api-0.0.1.jar
+
+
+
+docker image ls
+
+REPOSITORY                    TAG             IMAGE ID       CREATED          SIZE
+shop/shop-api                 latest          1af32c52dc1e   8 seconds ago    268MB
+shop/product-api              latest          369cd7b019c1   56 seconds ago   268MB
+shop/user-api                 latest          1d4f11771c94   3 minutes ago    268MB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

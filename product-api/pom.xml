@@ -28,7 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
-        <docker.image.prefix>loja</docker.image.prefix>
+        <docker.image.prefix>shop</docker.image.prefix>
 	</properties>
     <dependencies>
         <dependency>

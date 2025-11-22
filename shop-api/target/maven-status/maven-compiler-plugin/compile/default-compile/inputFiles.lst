@@ -1,6 +1,7 @@
 /home/wolf/Documentos/desenvolvimento/casa-do-codigo/backend-java-microservicos-spring-kubernetes/shop-api/src/main/java/com/ecommerce/shopapi/ShopApiApplication.java
 /home/wolf/Documentos/desenvolvimento/casa-do-codigo/backend-java-microservicos-spring-kubernetes/shop-api/src/main/java/com/ecommerce/shopapi/controller/ShopController.java
 /home/wolf/Documentos/desenvolvimento/casa-do-codigo/backend-java-microservicos-spring-kubernetes/shop-api/src/main/java/com/ecommerce/shopapi/converter/DTOConverter.java
+/home/wolf/Documentos/desenvolvimento/casa-do-codigo/backend-java-microservicos-spring-kubernetes/shop-api/src/main/java/com/ecommerce/shopapi/exception/advice/ShoppingControllerAdvice.java
 /home/wolf/Documentos/desenvolvimento/casa-do-codigo/backend-java-microservicos-spring-kubernetes/shop-api/src/main/java/com/ecommerce/shopapi/model/Item.java
 /home/wolf/Documentos/desenvolvimento/casa-do-codigo/backend-java-microservicos-spring-kubernetes/shop-api/src/main/java/com/ecommerce/shopapi/model/Shop.java
 /home/wolf/Documentos/desenvolvimento/casa-do-codigo/backend-java-microservicos-spring-kubernetes/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepository.java
