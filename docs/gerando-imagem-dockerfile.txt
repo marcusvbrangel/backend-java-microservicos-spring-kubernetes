@@ -23,6 +23,22 @@ shop/user-api                 latest          1d4f11771c94   3 minutes ago    26
 
 
 
+docker compose up -d
+
+[+] Running 5/5
+ ✔ Container postgres-container     Started                                                                                                                                                                    0.2s
+ ✔ Container shop-api-container     Started                                                                                                                                                                    0.6s
+ ✔ Container pgadmin-container      Started                                                                                                                                                                    0.6s
+ ✔ Container user-api-container     Started                                                                                                                                                                    0.5s
+ ✔ Container product-api-container  Started
+
+
+
+docker logs user-api-container
+docker logs product-api-container
+docker logs shop-api-container
+
+
 
 
 

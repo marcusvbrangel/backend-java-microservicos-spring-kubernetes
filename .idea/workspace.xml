@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="feat: implemented the key access on all of apis">
-      <change afterPath="$PROJECT_DIR$/docs/gerando-imagem-dockerfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-api/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shop-api/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-api/Dockerfile" afterDir="false" />
+    <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="feat: implemented the docker images of each project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/gerando-imagem-dockerfile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/gerando-imagem-dockerfile.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763847768719</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: implemented the docker images of each project">
+      <option name="closed" value="true" />
+      <created>1763850682483</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1763850682483</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -216,7 +217,8 @@
     <MESSAGE value="feat: implemented the integration among all of microservices" />
     <MESSAGE value="feat: implemented the exception class and controller advice" />
     <MESSAGE value="feat: implemented the key access on all of apis" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented the key access on all of apis" />
+    <MESSAGE value="feat: implemented the docker images of each project" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented the docker images of each project" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

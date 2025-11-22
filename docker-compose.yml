@@ -33,6 +33,53 @@ services:
     networks:
       - ecommerce-ms-network
 
+  user-api:
+    image: shop/user-api:latest
+    container_name: user-api-container
+    ports:
+      - "8081:8081"
+    environment:
+      DATASOURCE_URL: jdbc:postgresql://postgres:5432/userdb-development
+      DATASOURCE_USERNAME: postgres
+      DATASOURCE_PASSWORD: postgres
+      SHOW_SQL: true
+    depends_on:
+      - postgres
+    networks:
+      - ecommerce-ms-network
+
+  product-api:
+    image: shop/product-api:latest
+    container_name: product-api-container
+    ports:
+      - "8082:8082"
+    environment:
+      DATASOURCE_URL: jdbc:postgresql://postgres:5432/productdb-development
+      DATASOURCE_USERNAME: postgres
+      DATASOURCE_PASSWORD: postgres
+      SHOW_SQL: true
+    depends_on:
+      - postgres
+    networks:
+      - ecommerce-ms-network
+
+  shop-api:
+    image: shop/shop-api:latest
+    container_name: shop-api-container
+    ports:
+      - "8083:8083"
+    environment:
+      DATASOURCE_URL: jdbc:postgresql://postgres:5432/shopdb-devlopment
+      DATASOURCE_USERNAME: postgres
+      DATASOURCE_PASSWORD: postgres
+      SERVICE_USER_API_URL: http://user-api:8081
+      SERVICE_PRODUCT_API_URL: http://product-api:8082
+      SHOW_SQL: true
+    depends_on:
+      - postgres
+    networks:
+      - ecommerce-ms-network
+
 volumes:
   postgres_data:
 
