@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Service
 public class UserService {
@@ -14,15 +15,18 @@ public class UserService {
     @Value("${service.user-api.url}")
     private String serviceUseApiUrl;
 
-    public UserDTO getUserByCpf(String cpf) {
+    public UserDTO getUserByCpf(String cpf, String key) {
 
         try {
 
             RestTemplate restTemplate = new RestTemplate();
 
-            String url = serviceUseApiUrl + "/users/cpf/" + cpf;
+            UriComponentsBuilder uriBuilder = UriComponentsBuilder
+                    .fromHttpUrl(serviceUseApiUrl + "/users/cpf/" + cpf);
 
-            ResponseEntity<UserDTO> responseEntity = restTemplate.getForEntity(url, UserDTO.class);
+            uriBuilder.queryParam("key", key);
+
+            ResponseEntity<UserDTO> responseEntity = restTemplate.getForEntity(uriBuilder.toUriString(), UserDTO.class);
 
             return responseEntity.getBody();
 

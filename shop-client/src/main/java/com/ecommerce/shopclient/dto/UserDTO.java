@@ -10,6 +10,7 @@ public class UserDTO {
     private String email;
     private String telefone;
     private Date dataCadastro;
+    private String key;
 
     public String getNome() {
         return nome;
@@ -57,6 +58,14 @@ public class UserDTO {
 
     public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
 }
