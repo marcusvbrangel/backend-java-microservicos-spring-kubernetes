@@ -1,0 +1,354 @@
+
+-----------------------------------------------------------
+
+kubectl apply -f k8s/ -n shopping
+
+  Ou se quiser fazer de forma mais explícita:
+
+  kubectl apply -f k8s/ --namespace=shopping
+
+  Ambos aplicam todos os manifestos na pasta k8s/ no namespace shopping.
+
+
+
+-----------------------------------------------------------
+
+# Criar o namespace
+  kubectl create namespace shoping
+
+  # Verificar se foi criado
+  kubectl get namespaces
+
+  # Aplicar os manifestos no namespace "shoping"
+  kubectl apply -f k8s/ -n shoping
+
+  # Verificar recursos no namespace
+  kubectl get all -n shoping
+
+  # Verificar pods
+  kubectl get pods -n shoping
+
+  # Verificar services
+  kubectl get services -n shoping
+
+  # Verificar deployments
+  kubectl get deployments -n shoping
+
+  Para verificar logs de um pod específico no namespace:
+
+  kubectl logs <pod-name> -n shoping
+
+----------------------------------------------------
+
+
+Para verificar em qual namespace você está:
+
+  # Ver o namespace padrão atual
+  kubectl config view --minify | grep namespace
+
+  # Ou
+  kubectl config current-context
+
+  Para mudar para outro namespace:
+
+  # Mudar para o namespace "shoping"
+  kubectl config set-context --current --namespace=shopping
+
+  # Verificar se mudou
+  kubectl config view --minify | grep namespace
+
+  # Ou listar recursos sem especificar -n (agora usa "shopping" por padrão)
+  kubectl get pods
+  kubectl get services
+  kubectl get deployments
+
+  Para voltar ao namespace padrão:
+
+  # Voltar para "default"
+  kubectl config set-context --current --namespace=default
+
+  Listar todos os namespaces disponíveis:
+
+  kubectl get namespaces
+
+
+---------------------------------------------------------------
+
+
+Quando você executa kubectl apply -f k8s/ -n shopping, o Kubernetes:
+
+  1. Cria todos os recursos quase simultaneamente (Services, Deployments,
+  PersistentVolumeClaims)
+  2. Usa o campo depends_on nos Deployments para aguardar que certos
+  serviços estejam prontos antes de iniciar
+  3. Usa readiness/liveness probes para verificar se um serviço está
+  saudável
+
+  Por exemplo, no postgres-deployment.yaml e nos outros deployments, você
+  vai ver algo como:
+
+  spec:
+    template:
+      spec:
+        containers:
+        - name: postgres
+          image: postgres:16.3-alpine
+          # O Kubernetes vai aguardar o postgres estar pronto
+
+  E nos deployments das APIs:
+
+  spec:
+    template:
+      spec:
+        initContainers:
+        - name: wait-for-postgres
+          # Aguarda conexão com postgres antes de iniciar
+
+  Porém, se você quiser mais controle e aplicar na ordem específica:
+
+  # Aplicar na ordem correta
+  kubectl apply -f k8s/postgres-persistentvolumeclaim.yaml -n shopping
+  kubectl apply -f k8s/postgres-deployment.yaml -n shopping
+  kubectl apply -f k8s/postgres-service.yaml -n shopping
+
+  # Aguardar postgres ficar pronto
+  kubectl wait --for=condition=ready pod -l app=postgres -n shopping
+  --timeout=300s
+
+  # Depois aplicar as outras APIs
+  kubectl apply -f k8s/user-api-deployment.yaml -n shopping
+  kubectl apply -f k8s/user-api-service.yaml -n shopping
+  kubectl apply -f k8s/product-api-deployment.yaml -n shopping
+  kubectl apply -f k8s/product-api-service.yaml -n shopping
+  kubectl apply -f k8s/shop-api-deployment.yaml -n shopping
+  kubectl apply -f k8s/shop-api-service.yaml -n shopping
+
+  Mas na maioria dos casos, aplicar tudo de uma vez funciona perfeitamente!
+
+
+-----------------------------------------------------------------
+
+Todos os artefatos foram criados com sucesso no namespace
+  shopping.
+
+  Verifique o status:
+
+  # Ver todos os recursos
+  kubectl get all -n shopping
+
+  # Ver apenas pods
+  kubectl get pods -n shopping
+
+  # Ver deployments
+  kubectl get deployments -n shopping
+
+  # Ver services
+  kubectl get services -n shopping
+
+  # Ver se os pods estão rodando
+  kubectl get pods -n shopping -w
+
+  Para verificar os logs de um pod específico:
+
+  kubectl logs <pod-name> -n shopping
+
+  Por exemplo:
+
+  kubectl logs postgres-<id> -n shopping
+  kubectl logs user-api-<id> -n shopping
+  kubectl logs product-api-<id> -n shopping
+  kubectl logs shop-api-<id> -n shopping
+
+-----------------------------------------------------------
+
+O problema é que o PostgreSQL não tem os bancos de dados criados. Você precisa criar os bancos:
+
+  kubectl exec -it postgres-5697554fb-5gcrh -n shopping -- psql -U postgres -c "CREATE DATABASE \"userdb-development\";"
+  kubectl exec -it postgres-5697554fb-5gcrh -n shopping -- psql -U postgres -c "CREATE DATABASE \"productdb-development\";"
+  kubectl exec -it postgres-5697554fb-5gcrh -n shopping -- psql -U postgres -c "CREATE DATABASE \"shopdb-development\";"
+
+  Ou crie um script SQL e aplique:
+
+  kubectl exec -it postgres-5697554fb-5gcrh -n shopping -- psql -U postgres << EOF
+  CREATE DATABASE "userdb-development";
+  CREATE DATABASE "productdb-development";
+  CREATE DATABASE "shopdb-development";
+  EOF
+
+  Depois reinicie os pods das APIs:
+
+  kubectl rollout restart deployment/user-api deployment/product-api deployment/shop-api -n shopping
+  kubectl get pods -n shopping -w
+
+
+
+-----------------------------------------------------------
+
+ kubeval para validação mais robusta:
+
+  # Instalar kubeval
+  curl -L https://github.com/instrumenta/kubeval/releases/latest/download/ku
+  beval-linux-amd64.tar.gz | tar xz
+  sudo mv kubeval /usr/local/bin/
+
+  # Validar
+  kubeval k8s/*.yaml
+
+
+---------------------------------------------
+
+Instalação do Kompose
+
+  # Linux
+  curl -L https://github.com/kubernetes/kompose/releases/download/v1.28.0/kompose-linux-amd64 -o kompose
+  chmod +x kompose
+  sudo mv kompose /usr/local/bin/kompose
+
+  # Verificar instalação
+  kompose version
+
+  Passos para converter Docker Compose para Kubernetes
+
+  1. Verificar o arquivo docker-compose.yml
+
+  2. Converter para artefatos Kubernetes
+
+  # Gerar manifestos YAML no diretório atual
+  kompose convert
+
+  # Ou especificar um diretório de saída
+  kompose convert -o k8s
+
+  3. Listar os arquivos gerados
+
+  ls -la *.yaml
+  # ou
+  ls -la k8s-manifests/
+
+  4. Revisar os manifestos gerados
+
+  # Verificar cada arquivo
+  cat postgres-deployment.yaml
+  cat user-api-deployment.yaml
+  cat product-api-deployment.yaml
+  cat shop-api-deployment.yaml
+
+  # Verificar serviços
+  cat postgres-service.yaml
+  cat user-api-service.yaml
+  cat product-api-service.yaml
+  cat shop-api-service.yaml
+
+  # Verificar volumes
+  cat postgres-persistentvolumeclaim.yaml
+
+  Aplicar nos manifests no Kubernetes
+
+  # Aplicar todos os manifestos
+  kubectl apply -f .
+  # ou
+  kubectl apply -f k8s-manifests/
+
+  # Verificar recursos criados
+  kubectl get deployments
+  kubectl get services
+  kubectl get pods
+  kubectl get persistentvolumeclaims
+
+  Validar configuração antes de aplicar
+
+  # Validar um manifesto
+  kubectl apply -f postgres-deployment.yaml --dry-run=client -o yaml
+
+  Opções úteis do Kompose
+
+  # Converter especificando arquivo docker-compose customizado
+  kompose -f docker-compose.custom.yml convert
+
+  # Converter para um namespace específico
+  kompose convert --namespace meu-namespace
+
+  # Converter com replicas customizadas
+  kompose convert --replicas 3
+
+  # Converter e já aplicar no cluster (use com cuidado)
+  kompose up
+
+  Remover recursos do Kubernetes
+
+  # Remove todos os recursos criados
+  kompose down
+
+  # Ou manualmente
+  kubectl delete -f .
+  # ou
+  kubectl delete -f k8s-manifests/
+
+  Verificar logs dos pods
+
+  kubectl logs postgres-0
+  kubectl logs user-api-<pod-id>
+  kubectl logs product-api-<pod-id>
+  kubectl logs shop-api-<pod-id>
+
+  Esses são os passos principais para usar o Kompose com seus microserviços!
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+ vou executar este comando:  kubectl delete -f k8s/ -n shopping   para limpar tudo... e depois vou criar um artefato de cada vez
+
+● Ótimo plano! Execute:
+
+  kubectl delete -f k8s/ -n shopping
+
+  Depois verifique se tudo foi deletado:
+
+  kubectl get all -n shopping
+
+  Agora aplique um de cada vez, começando pelo PostgreSQL:
+
+  kubectl apply -f k8s/postgres-persistentvolumeclaim.yaml -n shopping
+  kubectl apply -f k8s/postgres-deployment.yaml -n shopping
+  kubectl apply -f k8s/postgres-service.yaml -n shopping
+
+
+  # Criar os bancos de dados
+    kubectl exec postgres-5697554fb-jprll -n shopping -- psql -U postgres -c "CREATE DATABASE \"userdb-development\";"
+    kubectl exec postgres-5697554fb-jprll -n shopping -- psql -U postgres -c "CREATE DATABASE \"productdb-development\";"
+    kubectl exec postgres-5697554fb-jprll -n shopping -- psql -U postgres -c "CREATE DATABASE \"shopdb-devlopment\";"
+
+
+
+
+  Depois aplique pgAdmin:
+
+  kubectl apply -f k8s/pgadmin-deployment.yaml -n shopping
+  kubectl apply -f k8s/pgadmin-service.yaml -n shopping
+
+  Depois as APIs:
+
+  kubectl apply -f k8s/user-api-deployment.yaml -n shopping
+  kubectl apply -f k8s/user-api-service.yaml -n shopping
+
+  kubectl apply -f k8s/product-api-deployment.yaml -n shopping
+  kubectl apply -f k8s/product-api-service.yaml -n shopping
+
+  kubectl apply -f k8s/shop-api-deployment.yaml -n shopping
+  kubectl apply -f k8s/shop-api-service.yaml -n shopping
+
+  Monitore:
+
+  kubectl get pods -n shopping -w
+
+
+
+
+
+
+
+
+
+

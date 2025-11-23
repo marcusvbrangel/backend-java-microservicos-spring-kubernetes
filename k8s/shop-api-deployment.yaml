@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -o k8s
+    kompose.version: 1.28.0 (c4137012e)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: shop-api
+  name: shop-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: shop-api
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -o k8s
+        kompose.version: 1.28.0 (c4137012e)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: shop-api
+    spec:
+      containers:
+        - env:
+            - name: DATASOURCE_PASSWORD
+              value: postgres
+            - name: DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/shopdb-devlopment
+            - name: DATASOURCE_USERNAME
+              value: postgres
+            - name: SERVICE_PRODUCT_API_URL
+              value: http://product-api:8082
+            - name: SERVICE_USER_API_URL
+              value: http://user-api:8081
+            - name: SHOW_SQL
+              value: "true"
+          image: shop/shop-api:latest
+          imagePullPolicy: Never
+          name: shop-api
+          ports:
+            - containerPort: 8083
+          resources: {}
+      restartPolicy: Always
+status: {}

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="feat: implemented the docker images of each project">
+    <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="feat: implemented the docker compose file with its respectives services">
+      <change afterPath="$PROJECT_DIR$/docs/ferramenta-kompose-gerar-artefatos-kubernetes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gerando-imagem-dockerfile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/gerando-imagem-dockerfile.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763850682483</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: implemented the docker compose file with its respectives services">
+      <option name="closed" value="true" />
+      <created>1763853526750</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1763853526750</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -218,7 +225,8 @@
     <MESSAGE value="feat: implemented the exception class and controller advice" />
     <MESSAGE value="feat: implemented the key access on all of apis" />
     <MESSAGE value="feat: implemented the docker images of each project" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented the docker images of each project" />
+    <MESSAGE value="feat: implemented the docker compose file with its respectives services" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented the docker compose file with its respectives services" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
