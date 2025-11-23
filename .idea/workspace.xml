@@ -4,100 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="chore: started to configure and deploy the kubernetes artifacts on minikube cluster">
-      <change afterPath="$PROJECT_DIR$/docs/load-image-minikube.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/postgres-sheet-sheet.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/postgres/postgres-configmap.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/postgres/postgres-deploy.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/postgres/postgres-pv.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/postgres/postgres-pvc.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/postgres/postgres-secret.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/postgres/postgres-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-api/src/main/resources/db/migration/V4__Add_key_values.sql" afterDir="false" />
+    <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="chore: implemented the user-api microservice on kubernetes cluster">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/ms-network-networkpolicy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/ms-network-networkpolicy.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/pgadmin-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/pgadmin-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/pgadmin-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/pgadmin-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/postgres-data-persistentvolumeclaim.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/postgres-data-persistentvolumeclaim.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/postgres-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/postgres-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/postgres-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/postgres-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/product-api-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/product-api-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/product-api-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/product-api-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/shop-api-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/shop-api-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/shop-api-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/shop-api-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/user-api-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/user-api-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/user-api-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/temp/user-api-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/ProductApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/shopping/productapi/ProductApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/shopping/productapi/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/converter/DTOConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/shopping/productapi/converter/DTOConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/exception/advice/ProductControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/shopping/productapi/exception/advice/ProductControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/shopping/productapi/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/shopping/productapi/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/shopping/productapi/repository/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/shopping/productapi/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/java/com/ecommerce/productapi/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/java/com/shopping/productapi/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-api/src/test/java/com/ecommerce/productapi/UserApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-api/src/test/java/com/shopping/productapi/UserApiApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/ShopApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/ShopApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/controller/ShopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/converter/DTOConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/converter/DTOConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/exception/advice/ShoppingControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/exception/advice/ShoppingControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/model/Shop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/repository/ReportRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ReportRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/repository/ReportRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/repository/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/repository/ShopRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/service/ShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/java/com/ecommerce/shopapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/java/com/shopping/shopapi/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/src/test/java/com/ecommerce/shopapi/UserApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/src/test/java/com/shopping/shopapi/UserApiApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/com/ecommerce/shopapi/ShopApiApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/com/ecommerce/shopapi/controller/ShopController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/com/ecommerce/shopapi/converter/DTOConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/com/ecommerce/shopapi/model/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/com/ecommerce/shopapi/model/Shop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/com/ecommerce/shopapi/repository/ReportRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/com/ecommerce/shopapi/repository/ReportRepositoryImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/com/ecommerce/shopapi/repository/ShopRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/classes/com/ecommerce/shopapi/service/ShopService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/CategoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/shopping/client/dto/CategoryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/ErrorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/shopping/client/dto/ErrorDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/ItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/shopping/client/dto/ItemDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/shopping/client/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/ShopDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/shopping/client/dto/ShopDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/ShopReportDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/shopping/client/dto/ShopReportDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/shopping/client/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/exception/CategoryNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/shopping/client/exception/CategoryNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/exception/ProductNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/shopping/client/exception/ProductNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/src/main/java/com/shopping/client/exception/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/target/classes/com/ecommerce/shopclient/dto/CategoryDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/target/classes/com/ecommerce/shopclient/dto/ItemDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/target/classes/com/ecommerce/shopclient/dto/ProductDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/target/classes/com/ecommerce/shopclient/dto/ShopDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/target/classes/com/ecommerce/shopclient/dto/ShopReportDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/target/classes/com/ecommerce/shopclient/dto/UserDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop-client/target/shop-client-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/shop-client/target/shop-client-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/UserApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/shopping/userapi/UserApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/shopping/userapi/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/converter/DTOConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/shopping/userapi/converter/DTOConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/exception/adivice/UserControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/shopping/userapi/exception/adivice/UserControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/shopping/userapi/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/shopping/userapi/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/java/com/ecommerce/userapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/java/com/shopping/userapi/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-api/src/test/java/com/ecommerce/userapi/UserApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/test/java/com/shopping/userapi/UserApiApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/product-api/product-api-configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/product-api/product-api-configmap.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,16 +67,16 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/wolf/Documentos/desenvolvimento/casa-do-codigo/backend-java-microservicos-spring-kubernetes/user-api/src/main/resources/db/migration"
+    "last_opened_file_path": "/home/wolf/Documentos/desenvolvimento/casa-do-codigo/backend-java-microservicos-spring-kubernetes/k8s"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/k8s" />
       <recent name="$PROJECT_DIR$/user-api/src/main/resources/db/migration" />
       <recent name="$PROJECT_DIR$/shop-api" />
       <recent name="$PROJECT_DIR$/product-api" />
       <recent name="$PROJECT_DIR$/shop-client/src/main/java/com/ecommerce/shopclient/exception" />
-      <recent name="$PROJECT_DIR$/shop-api/src/main/resources/db/migration" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/k8s/temp" />
@@ -321,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763861491671</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="chore: implemented the user-api microservice on kubernetes cluster">
+      <option name="closed" value="true" />
+      <created>1763940088765</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1763940088765</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -336,7 +253,8 @@
     <MESSAGE value="feat: implemented the docker images of each project" />
     <MESSAGE value="feat: implemented the docker compose file with its respectives services" />
     <MESSAGE value="chore: started to configure and deploy the kubernetes artifacts on minikube cluster" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: started to configure and deploy the kubernetes artifacts on minikube cluster" />
+    <MESSAGE value="chore: implemented the user-api microservice on kubernetes cluster" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: implemented the user-api microservice on kubernetes cluster" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
