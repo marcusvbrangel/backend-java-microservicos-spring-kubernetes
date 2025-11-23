@@ -1,0 +1,153 @@
+
+-----------------------------------------------------------------------------------------------
+
+productdb-development
+
+userdb-development
+
+shopdb-devlopment
+
+-----------------------------------------------------------------------------------------------
+
+ Como Entrar Dentro de um Pod Kubernetes
+
+  Comando Básico
+
+  kubectl exec -it pod/nome-do-pod -- /bin/bash
+
+  ou
+
+  kubectl exec -it nome-do-pod -- /bin/sh
+
+  Exemplos Práticos
+
+  1. Entrar no pod postgres com bash:
+
+  kubectl exec -it pod/postgres-deploy-5d5d58fd47-w5v27 -- /bin/bash
+
+  2. Entrar no pod postgres com psql:
+
+  kubectl exec -it pod/postgres-deploy-5d5d58fd47-w5v27 -- psql -U postgres
+
+  3. Entrar em um pod específico de um deployment:
+
+  kubectl exec -it deployment/postgres-deploy -- /bin/bash
+
+  4. Executar um comando sem entrar (uma única execução):
+
+  kubectl exec pod/postgres-deploy-5d5d58fd47-w5v27 -- ls -la
+
+  Parâmetros Importantes
+
+  | Parâmetro | Descrição                                                 |
+  |-----------|-----------------------------------------------------------|
+  | -i        | Mantém stdin aberto mesmo sem anexado                     |
+  | -t        | Aloca um pseudo-terminal                                  |
+  | -it       | Modo interativo com terminal                              |
+  | --        | Separa os argumentos do kubectl dos argumentos do comando |
+
+  Dicas Úteis
+
+  - Listar pods: kubectl get pods
+  - Ver logs do pod: kubectl logs nome-do-pod
+  - Descrever pod: kubectl describe pod nome-do-pod
+  - Sair do pod: Digite exit ou pressione Ctrl+D
+
+  No seu caso, para entrar no postgres:
+  kubectl exec -it pod/postgres-deploy-5d5d58fd47-w5v27 -- psql -U postgres
+
+
+-----------------------------------------------------------------------------------------------
+
+
+ Conexão e Autenticação
+
+  1. psql -U postgres -d nome_database - Conectar a um banco de dados específico
+  2. psql -U postgres -h localhost -p 5432 - Conectar com host e porta específicos
+  3. \q - Sair do psql
+
+  Gerenciamento de Bancos de Dados
+
+  4. CREATE DATABASE nome_database; - Criar um novo banco de dados
+  5. DROP DATABASE nome_database; - Deletar um banco de dados
+  6. \l - Listar todos os bancos de dados
+  7. \c nome_database - Conectar a um banco de dados
+
+  Gerenciamento de Tabelas
+
+  8. \dt - Listar todas as tabelas do banco atual
+  9. \d nome_tabela - Descrever a estrutura de uma tabela
+  10. CREATE TABLE nome_tabela (id SERIAL PRIMARY KEY, nome VARCHAR(100)); - Criar
+  tabela
+  11. DROP TABLE nome_tabela; - Deletar uma tabela
+  12. ALTER TABLE nome_tabela ADD COLUMN nova_coluna VARCHAR(100); - Adicionar
+  coluna
+
+  Gerenciamento de Usuários
+
+  13. CREATE USER nome_usuario WITH PASSWORD 'senha'; - Criar usuário
+  14. ALTER USER nome_usuario WITH PASSWORD 'nova_senha'; - Alterar senha
+  15. DROP USER nome_usuario; - Deletar usuário
+  16. \du - Listar todos os usuários
+  17. GRANT ALL PRIVILEGES ON DATABASE nome_database TO nome_usuario; - Conceder
+  permissões
+
+  Consultas e Dados
+
+  18. SELECT * FROM nome_tabela; - Selecionar todos os registros
+  19. INSERT INTO nome_tabela (coluna1, coluna2) VALUES ('valor1', 'valor2'); -
+  Inserir dados
+  20. UPDATE nome_tabela SET coluna = 'novo_valor' WHERE id = 1; - Atualizar dados
+
+  Bonus úteis
+
+  - \h - Ajuda sobre comandos SQL
+  -  - Ajuda sobre comandos psql
+  - \i arquivo.sql - Executar arquivo SQL
+  - EXPLAIN SELECT...; - Analisar desempenho de query
+
+
+Para descrever uma tabela no PostgreSQL, use o comando \d:
+
+  Comando para Descrever Tabela
+
+  \d nome_tabela
+
+  Exemplos práticos:
+
+  1. Ver a estrutura de uma tabela específica:
+  \d users
+
+  2. Ver todas as tabelas do banco atual:
+  \dt
+
+  3. Ver informações detalhadas (incluindo índices e constraints):
+  \d+ nome_tabela
+
+  4. Ver apenas as colunas de uma tabela:
+  SELECT column_name, data_type, is_nullable, column_default
+  FROM information_schema.columns
+  WHERE table_name = 'nome_tabela';
+
+  No seu caso com Kubernetes:
+
+  Se você quiser descrever uma tabela dentro do pod postgres, use:
+
+  kubectl exec pod/postgres-deploy-5d5d58fd47-w5v27 -- psql -U postgres -d
+  productdb-development -c "\d nome_tabela"
+
+  Exemplo completo:
+  kubectl exec pod/postgres-deploy-5d5d58fd47-w5v27 -- psql -U postgres -d
+  productdb-development -c "\d"
+
+
+-----------------------------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------
+

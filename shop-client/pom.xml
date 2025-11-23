@@ -8,7 +8,7 @@
 		<version>3.4.11</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ecommerce</groupId>
+	<groupId>com.shopping</groupId>
 	<artifactId>shop-client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>shop-client</name>

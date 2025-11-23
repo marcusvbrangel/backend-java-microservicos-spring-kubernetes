@@ -1,0 +1,67 @@
+
+----------------------------------------------------------
+
+
+O problema é que a imagem ainda é a mesma (note o Image ID continua igual). A imagem não
+  foi reconstruída. Precisa fazer clean build:
+
+  cd user-api
+  mvn clean package -DskipTests
+  docker build -t user-api:latest .
+  minikube image load user-api:latest
+  cd ..
+  kubectl rollout restart deployment/user-api-deploy
+
+  Aguarde uns 2-3 minutos e verifique:
+
+  kubectl get pods
+
+  Se ainda não funcionar, pode ser que o Maven não esteja encontrando o novo pom.xml.
+  Verifique se o Actuator está no JAR:
+
+  kubectl exec -it pod/user-api-deploy-78f54d8964-bp55w -- sh
+  jar tf /app.jar | grep actuator
+
+  Se não aparecer spring-boot-actuator, significa que o build não incluiu a dependência.
+  Nesse caso, force o rebuild completo do Docker com --no-cache:
+
+  docker build --no-cache -t user-api:latest ./user-api
+  minikube image load user-api:latest
+  kubectl rollout restart deployment/user-api-deploy
+
+
+
+
+
+
+------------------------------------------------
+
+
+Vejo que o product-api-deploy está com erro ErrImageNeverPull. Isso significa
+  que a imagem Docker product-api:latest não foi encontrada no seu ambiente
+  local (Minikube).
+
+  Você precisa:
+
+  1. Construir a imagem Docker do product-api:
+  docker build -t product-api:latest ./product-api
+
+  2. Carregar a imagem no Minikube (se estiver usando Minikube com driver
+  local):
+  minikube image load product-api:latest
+
+  Ou, se estiver usando o Docker do Minikube:
+  eval $(minikube docker-env)
+  docker build -t product-api:latest ./product-api
+
+  3. Verificar o status depois:
+  kubectl get pods
+
+  O pod deve ficar Running assim que a imagem estiver disponível.
+
+  Obs: Note que o SERVER_PORT no configmap está com valor 5432 (porta do
+  PostgreSQL), mas deveria ser 8082. Você pode corrigir com:
+  kubectl set env configmap/product-api-configmap SERVER_PORT=8082
+
+  Depois reinicie o pod para aplicar a mudança:
+  kubectl rollout restart deployment/product-api-deploy

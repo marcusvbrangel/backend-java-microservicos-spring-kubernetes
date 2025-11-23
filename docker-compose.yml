@@ -3,9 +3,9 @@ services:
 
   postgres:
     image: postgres:16.3-alpine
-    container_name: postgres-container
+    container_name: postgres
     environment:
-      POSTGRES_DB: storedb
+      POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
@@ -18,11 +18,11 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - ecommerce-ms-network
+      - shopping-ms-network
 
   pgadmin:
     image: dpage/pgadmin4:latest
-    container_name: pgadmin-container
+    container_name: pgadmin
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
@@ -31,45 +31,45 @@ services:
     depends_on:
       - postgres
     networks:
-      - ecommerce-ms-network
+      - shopping-ms-network
 
   user-api:
-    image: shop/user-api:latest
-    container_name: user-api-container
+    image: user-api:latest
+    container_name: user-api
     ports:
       - "8081:8081"
     environment:
-      DATASOURCE_URL: jdbc:postgresql://postgres:5432/userdb-development
+      DATASOURCE_URL: jdbc:postgresql://postgres:5432/user-dev
       DATASOURCE_USERNAME: postgres
       DATASOURCE_PASSWORD: postgres
       SHOW_SQL: true
     depends_on:
       - postgres
     networks:
-      - ecommerce-ms-network
+      - shopping-ms-network
 
   product-api:
-    image: shop/product-api:latest
-    container_name: product-api-container
+    image: product-api:latest
+    container_name: product
     ports:
       - "8082:8082"
     environment:
-      DATASOURCE_URL: jdbc:postgresql://postgres:5432/productdb-development
+      DATASOURCE_URL: jdbc:postgresql://postgres:5432/product-dev
       DATASOURCE_USERNAME: postgres
       DATASOURCE_PASSWORD: postgres
       SHOW_SQL: true
     depends_on:
       - postgres
     networks:
-      - ecommerce-ms-network
+      - shopping-ms-network
 
   shop-api:
-    image: shop/shop-api:latest
-    container_name: shop-api-container
+    image: shop-api:latest
+    container_name: shop-api
     ports:
       - "8083:8083"
     environment:
-      DATASOURCE_URL: jdbc:postgresql://postgres:5432/shopdb-devlopment
+      DATASOURCE_URL: jdbc:postgresql://postgres:5432/shop-dev
       DATASOURCE_USERNAME: postgres
       DATASOURCE_PASSWORD: postgres
       SERVICE_USER_API_URL: http://user-api:8081
@@ -78,11 +78,11 @@ services:
     depends_on:
       - postgres
     networks:
-      - ecommerce-ms-network
+      - shopping-ms-network
 
 volumes:
   postgres_data:
 
 networks:
-  ecommerce-ms-network:
+  shopping-ms-network:
     driver: bridge
