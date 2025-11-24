@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: shop-ingress
+  namespace: shopping
+  labels:
+    app: shop-api
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: com.shop.local
+      http:
+        paths:
+          - path: /users(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: user-api
+                port:
+                  number: 8081
+          - path: /products(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: product-api
+                port:
+                  number: 8082
+          - path: /shops(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: shop-api
+                port:
+                  number: 8083
