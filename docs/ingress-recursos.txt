@@ -2,6 +2,7 @@
 -----------------------------------------------------------
 
 http://com.shop.local/users
+http://com.shop.local/users/cpf/23456789012?key=6ba7b810-9dad-11d1-80b4-00c04fd430c8
 
 http://com.shop.local/products
 http://com.shop.local/products/PROD-0003

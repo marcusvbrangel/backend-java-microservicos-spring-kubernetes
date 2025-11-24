@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="chore: implemented the shop-api microservice on kubernetes cluster">
-      <change afterPath="$PROJECT_DIR$/docs/ingress-recursos.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/ingress/shop-ingress.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ingress-recursos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ingress-recursos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-api/src/main/resources/db/migration/V4__Add_key_values.sql" beforeDir="false" afterPath="$PROJECT_DIR$/user-api/src/main/resources/db/migration/V4__Add_key_values.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763946054284</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="chore: implemented the shop-api microservice on kubernetes cluster">
+      <option name="closed" value="true" />
+      <created>1763948300849</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1763948300849</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
