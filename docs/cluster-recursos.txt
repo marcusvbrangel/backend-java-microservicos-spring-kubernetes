@@ -1,0 +1,125 @@
+
+----------------------------------------------------------------------------------------------
+
+
+📈 Análise de Recursos - Microserviços
+
+
+Alocação por Pod:
+
+  | Pod                | CPU Req | CPU Limit | Memória Req | Memória Limit |
+  |--------------------|---------|-----------|-------------|---------------|
+  | postgres-deploy    | 250m    | 500m      | 256Mi       | 512Mi         |
+  | product-api-deploy | 250m    | 500m      | 256Mi       | 512Mi         |
+  | shop-api-deploy    | 250m    | 500m      | 256Mi       | 512Mi         |
+  | user-api-deploy    | 250m    | 500m      | 256Mi       | 512Mi         |
+
+  Total Alocado (Namespace Shopping):
+
+  - CPU Requisição: 1000m (25% do cluster) ✅
+  - CPU Limite: 2000m (50% do cluster) ⚠️
+  - Memória Requisição: 1024Mi (~6% do cluster) ✅
+  - Memória Limite: 2048Mi (~12% do cluster) ✅
+
+  Disco:
+
+  - Uso Total: 148GB / 439GB (36%) ✅
+
+  🎯 Diagnóstico:
+
+  NÃO estão sobrecarregando. Seu cluster está em bom estado com:
+
+  ✅ CPU: Uso equilibrado (43% do capacity)
+  ✅ Memória: Muito confortável (7% usado)
+  ✅ Disco: Espaço adequado (64GB disponível)
+
+  Observações:
+
+  1. Sem Resource Quota - Nenhuma restrição de namespace ativada
+  2. Sem LimitRange - Sem limites padrão para novos pods
+  3. Limites generosos - Cada pod pode usar até 500m CPU e 512Mi memória
+
+  Recomendação:
+
+  Se quiser otimizar, pode considerar:
+  - Reduzir limites de CPU para 300m (em vez de 500m) para APIs Java
+  - Adicionar Resource Quota no namespace para melhor controle
+
+  Seu ambiente está saudável e com margem de crescimento 💪
+
+
+----------------------------------------------------------------------------------------------
+
+ 📊 Análise do Postgres
+
+  Tamanho dos Bancos:
+
+  - product-stage: 7.7 MB
+  - shop-stage: 7.7 MB
+  - user-stage: 7.7 MB
+  - Total: ~23 MB (muito pequeno!)
+
+  Configuração Atual:
+
+  - shared_buffers: 128 MB ✅
+  - effective_cache_size: 4 GB ✅
+  - work_mem: 4 MB ✅
+  - max_connections: 100 ✅
+
+  Memória Disponível no Container:
+
+  - Total: 15.5 GB (do host)
+  - Usado: 8 GB
+  - Livre: 485 MB
+  - Disponível: 6.2 GB ✅
+
+  ---
+  🎯 Diagnóstico:
+
+  NÃO, o Postgres NÃO precisa de mais recursos. Está muito bem configurado para:
+
+  ✅ Bancos pequenos (7.7 MB cada)
+  ✅ Memória abundante (6.2 GB disponível)
+  ✅ Configuração otimizada (shared_buffers e cache já generosos)
+  ✅ Sem sinais de stress (nenhum erro ou warning)
+
+  Por que está confortável:
+
+  1. Os dados são muito pequenos (~23 MB total)
+  2. A alocação de 256 Mi (request) + 512 Mi (limit) é adequada
+  3. CPU de 250m-500m é suficiente para operações simples
+
+  Quando aumentar seria necessário:
+
+  - Bancos > 100 MB
+  - Muitas conexões simultâneas (> 50)
+  - Queries complexas/lentas
+  - Alto volume de transações
+
+  Seu Postgres está em excelente forma! 💚
+
+
+----------------------------------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

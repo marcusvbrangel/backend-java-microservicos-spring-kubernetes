@@ -1,6 +1,9 @@
 
 ----------------------------------------------------------
 
+kubectl describe node minikube
+
+--------------------------------------------------------------
 
 O problema é que a imagem ainda é a mesma (note o Image ID continua igual). A imagem não
   foi reconstruída. Precisa fazer clean build:
