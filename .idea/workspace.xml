@@ -5,25 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="369c4b90-f6fe-4516-9386-a5e9b658ddcd" name="Changes" comment="chore: implemented the shop-api microservice on kubernetes cluster">
-      <change afterPath="$PROJECT_DIR$/docs/cluster-recursos.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/load-image-minikube.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/load-image-minikube.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/shop-api/user-api-configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/shop-api/shop-api-configmap.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/shop-api/user-api-deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/shop-api/shop-api-deploy.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/shop-api/user-api-secret.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/shop-api/shop-api-secret.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/shop-api/user-api-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/shop-api/shop-api-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/ms-network-networkpolicy.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/pgadmin-deployment.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/pgadmin-service.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/postgres-data-persistentvolumeclaim.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/postgres-deployment.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/postgres-service.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/product-api-deployment.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/product-api-service.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/shop-api-deployment.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/shop-api-service.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/user-api-deployment.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/temp/user-api-service.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/product-api/product-api-deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/product-api/product-api-deploy.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/shop-api/shop-api-deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/shop-api/shop-api-deploy.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/user-api/user-api-deploy.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/user-api/user-api-deploy.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763942340731</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="chore: implemented the shop-api microservice on kubernetes cluster">
+      <option name="closed" value="true" />
+      <created>1763945560142</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1763945560143</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
