@@ -17,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"nome\": \"Carlos\",\n\"cpf\": \"987\",\n\"endereco\": \"Avenida 2\",\n\"email\":\"carlos@email.com\",\n\"telefone\":\"1234-3454\"\n}",
+							"raw": "{\n\"nome\": \"Luiz Gonzaga\",\n\"cpf\": \"45785214896\",\n\"endereco\": \"Av. Paraibuna, 34\",\n\"email\":\"gonzaga@hotmail.com\",\n\"telefone\":\"74965487541\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -86,14 +86,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8081/users/4",
+							"raw": "localhost:8081/users/10",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
 								"users",
-								"4"
+								"10"
 							]
 						}
 					},
@@ -124,7 +124,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8081/users/cpf/23456789012",
+							"raw": "localhost:8081/users/cpf/23456789012?key=6ba7b810-9dad-11d1-80b4-00c04fd430c8",
 							"host": [
 								"localhost"
 							],
@@ -133,6 +133,12 @@
 								"users",
 								"cpf",
 								"23456789012"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+								}
 							]
 						}
 					},
@@ -216,7 +222,13 @@
 					"name": "Criar Compra",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "key",
+								"value": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"userIdentifier\": \"23456789012\",\n    \"items\": [\n        {\n            \"productIdentifier\": \"PROD-0002\"\n        },\n        {\n            \"productIdentifier\": \"PROD-0003\"\n        }\n    ]\n}",
@@ -265,7 +277,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8083/shops/search?dataInicio=21/11/2025&dataFim=22/11/2025&valorMinimo=7000",
+							"raw": "localhost:8083/shops/search?dataInicio=21/11/2005&dataFim=22/11/2026&valorMinimo=7000",
 							"host": [
 								"localhost"
 							],
@@ -277,11 +289,11 @@
 							"query": [
 								{
 									"key": "dataInicio",
-									"value": "21/11/2025"
+									"value": "21/11/2005"
 								},
 								{
 									"key": "dataFim",
-									"value": "22/11/2025"
+									"value": "22/11/2026"
 								},
 								{
 									"key": "valorMinimo",
